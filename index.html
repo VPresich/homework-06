@@ -44,7 +44,7 @@
             </li>
           </ul>
         </nav>
-        <button class="menu-icon-button">
+        <button type="button" class="menu-icon-button">
           <svg class="menu-icon" width="24" height="24">
             <use href="./images/icons.svg#icon-menu"></use>
           </svg>
@@ -638,7 +638,6 @@
             <label class="form-text"
               >Leave your contacts and we will call you back</label
             >
-            <!-- Input fields group -->
             <label class="input-label" for="user-name">Name</label>
             <div class="input-custom">
               <span class="input-icon-container">
@@ -723,6 +722,106 @@
       </form>
     </div>
 
+    <!-- Modal window for menu -->
+    <div class="modal-menu is-hidden" id="id-modalmenu">
+      <form class="form-menu" id="id-form-menu">
+        <div class="form-menu-container">
+          <!-- Form header -->
+          <div class="form-menu-header">
+            <div class="form-menu-title"></div>
+            <!-- Close button -->
+            <button class="form-menu-close-button">
+              <svg class="close-icon" width="8" height="8">
+                <use href="./images/icons.svg#close-form"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- Form controls -->
+          <div class="form-menu-controls">
+            <!-- Menu -->
+            <ul class="form-menu-list">
+              <li>
+                <a href="" class="form-menu-item-current">Studio</a>
+              </li>
+              <li>
+                <a href="" class="form-menu-item">Portfolio</a>
+              </li>
+              <li>
+                <a href="" class="form-menu-item">Contacts</a>
+              </li>
+            </ul>
+            <!-- Contacts -->
+            <address class="form-contacts">
+              <ul class="form-contacts-container">
+                <li>
+                  <a href="tel:+110001111111" class="form-contact-phone"
+                    >+11 (000) 111-11-11</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:info@devstudio.com" class="form-contact-email"
+                    >info@devstudio.com</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="form-menu-footer">
+            <ul class="form-social-links">
+              <!-- Iinstagram icon -->
+              <li class="form-icon-container">
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="form-social-link"
+                >
+                  <svg class="form-social-icon" width="24" height="24">
+                    <use href="./images/icons.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <!-- Twitter icon -->
+              <li class="form-icon-container">
+                <a
+                  href="https://www.twitter.com/"
+                  target="_blank"
+                  class="form-social-link"
+                >
+                  <svg class="form-social-icon" width="24" height="24">
+                    <use href="./images/icons.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <!-- Facebook icon -->
+              <li class="form-icon-container">
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  class="form-social-link"
+                >
+                  <svg class="form-social-icon" width="24" height="24">
+                    <use href="./images/icons.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <!-- LinkedId icon -->
+              <li class="form-icon-container">
+                <a
+                  href="https://www.linkedid.com/"
+                  target="_blank"
+                  class="form-social-link"
+                >
+                  <svg class="form-social-icon" width="24" height="24">
+                    <use href="./images/icons.svg#linkedid"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
     <script>
       var buttonOrder = document.querySelector('.button-order');
       var modalWindow = document.querySelector('.modal-window');
@@ -734,6 +833,18 @@
 
       buttonClose.addEventListener('click', function () {
         modalWindow.classList.add('is-hidden');
+      });
+
+      var buttonMenu = document.querySelector('.menu-icon-button');
+      var modalMenulWindow = document.querySelector('.modal-menu');
+      var buttonMenuClose = document.querySelector('.form-menu-close-button');
+
+      buttonMenu.addEventListener('click', function () {
+        modalMenulWindow.classList.remove('is-hidden');
+      });
+
+      buttonMenuClose.addEventListener('click', function () {
+        modalMenulWindow.classList.add('is-hidden');
       });
     </script>
   </body>
